@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<button type="button"
+onclick="productoCartel(2,5);">
+Click con cartel</button>
+
+<p>3 *4 es </p>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p> si pongo 2 es  </p>
+<p id="demo3"></p>
+
+
+
+<script>
+console.log("Producto");
+
+var x=producto(3,4);
+document.getElementById('demo').innerHTML = x;
+
+var z=diaSemana(2);
+document.getElementById('demo3').innerHTML = z;
+
+document.getElementById('demo2').innerHTML = "Probando";
+//document.getElementById('demo3').innerHTML = productoCartel(2,5);
+
+function producto (a, b){
+	return a*b;
+}
+
+function productoCartel (a, b){
+	window.alert("2 * 5 = "+a*b);
+}
+
+function diaSemana(dia){
+	switch(dia){
+    case 1: {
+    console.log("Entro al 1");
+    return "Lunes";
+    		
+    		break;
+            }
+     case 2: {return "Martes";
+     		console.log("Entro al 2");
+    		break;
+            }           
+    default: return "No es un dia";
+    }
+}
+
+
+function producto (a, b){
+	return a*b;
+}
+
+
+</script>
+
+</body>
+</html> 

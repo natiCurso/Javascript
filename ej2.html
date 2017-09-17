@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Saludo</button>
+<button onclick="calcularPromedio()">Promedio</button>
+<button onclick="arreglo()">Cant Arreglo</button>
+<p>Ingrese su dni</p>
+<input id="dni" type="text">
+<button onclick="cartelFormulario()">Ver</button>
+
+<p id="demo"></p>
+<p id="demo1"></p> 
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<button type="button"
+onclick="document.getElementById('fecha').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="fecha"></p>
+
+<script>
+function myFunction() {
+    var person = prompt("Please enter your name", "Harry Potter");
+    if (person != null) {
+        document.getElementById("demo1").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+}
+
+function cartelFormulario() {
+    
+    //alert(document.getElementById("dni").value);
+    var x= document.getElementById("dni").value;
+    try{
+    if(isNaN(x)) throw "No es numero";
+    alert("ok "+ x);
+    
+    }catch(err){
+    document.getElementById("demo3").innerHTML =
+        "Que ingreso? " + err;
+    }
+    
+    
+   
+        
+    
+}
+
+function calcularPromedio() {
+   var ingresado = prompt("Ingrese tamaño y valores, separados con espacio","2");
+   
+   var arreglo= ingresado.split(" ");
+  
+   var suma=0;
+   var total;
+   var i;
+   tam=arreglo[0];
+   for(i=1;i<=tam;i++){
+   valor=Number(arreglo[i]);
+   suma+=valor;
+   console.log(valor);
+   
+   }
+   document.getElementById("demo2").innerHTML ="Tamaño "+suma/tam;
+}
+
+function arreglo() {
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo").innerHTML = fruits.length;
+}
+
+</script>
+
+</body>
+</html>
